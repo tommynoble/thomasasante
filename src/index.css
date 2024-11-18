@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text antialiased;
+}
+
+::selection {
+  @apply bg-gradient-to-r from-primary-from to-primary-to text-white;
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-primary-from to-primary-to text-transparent bg-clip-text;
+}
+
+.gradient-bg {
+  @apply bg-gradient-to-r from-primary-from to-primary-to;
+}
+
+/* Card styles */
+.card {
+  @apply bg-light-card dark:bg-dark-card border border-gray-200 dark:border-zinc-800 
+    shadow-sm hover:shadow-md dark:shadow-none transition-all duration-300;
+}
+
+/* Form styles */
+.form-input {
+  @apply bg-light-card dark:bg-dark-card border border-gray-200 dark:border-zinc-800 
+    focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply bg-primary hover:bg-primary/90 text-white transition-colors;
+}
+
+.btn-secondary {
+  @apply bg-light-card dark:bg-dark-card hover:bg-gray-100 dark:hover:bg-dark-lighter 
+    text-light-text dark:text-dark-text transition-colors;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.6s ease-out forwards;
+}
+
+.animate-delay-100 { animation-delay: 100ms; }
+.animate-delay-200 { animation-delay: 200ms; }
+.animate-delay-300 { animation-delay: 300ms; }
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.4s ease-out forwards;
+}
